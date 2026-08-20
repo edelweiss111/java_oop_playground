@@ -10,7 +10,8 @@ public class Point {
         this.y = y;
     }
 
+    @Override
     public String toString() {
-        return "{" + x + ";" + y + "}";
+        return "{%d;%d}".formatted(x, y);
     }
 }

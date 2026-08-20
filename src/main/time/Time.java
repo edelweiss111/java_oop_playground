@@ -8,7 +8,8 @@ public class Time {
         //в сутказ максимум 86400 секунд, выводим сколько прошло от начала суток
         this.seconds = seconds%86400;
     }
-
+   
+    @Override
     public String toString(){
         int hours = seconds/3600;
         int minutes = (seconds%3600)/60;

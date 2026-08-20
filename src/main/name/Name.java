@@ -12,20 +12,16 @@ public class Name {
         this.middle_name = middle_name;
     }
 
+    @Override
     public String toString(){
+        
         String result = "";
 
-        if (lastname != null){
-            result += lastname + " ";
-        }
-
-        if (firstname != null){
-            result += firstname + " ";
-        }
-
-        if (middle_name != null){
-            result += middle_name;
-        } 
+        if (lastname != null) result += lastname + " ";
+   
+        if (firstname != null) result += firstname + " ";
+ 
+        if (middle_name != null) result += middle_name;
 
         return result;
     }

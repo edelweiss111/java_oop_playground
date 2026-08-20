@@ -10,8 +10,9 @@ public class Human {
         this.height = height;
     }
 
+    @Override
     public String toString() {
-        return name + ", рост:" + height;
+        return "%s, рост: %d".formatted(name, height);
     }
 
 }
