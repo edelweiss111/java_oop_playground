@@ -1,4 +1,4 @@
-package human;
+package models;
 
 public class Human {
 

@@ -1,4 +1,4 @@
-package name;
+package models;
 
 public class Name {
 

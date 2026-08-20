@@ -1,4 +1,4 @@
-package time;
+package models;
 
 public class Time {
     
