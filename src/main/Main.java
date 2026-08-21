@@ -4,7 +4,6 @@ public class Main {
 
         testPoints();
         testHumans();
-        testNames();
         testTimes();
         testHouses();
         testLines();
@@ -25,16 +24,27 @@ public class Main {
     }
 
     public static void testHumans(){
-        //1.1.2 сущности человека
+        //1.1.2, 1.2.2, 1.2.3 сущности человека
 
-        Human human1 = new Human("Клеопатра", 152 );
-        Human human2 = new Human("Пушкин", 167);
-        Human human3 = new Human("Александр", 189);
+        // Name name1 = new Name(null, "Клеопатра", null);
+        // Name name2 = new Name("Пушкин", "Александр", "Сергеевич");
+        // Name name3 = new Name("Маяковский", "Владимир", null);
 
-        System.out.println("Человек с именем " + human1.toString() );
-        System.out.println("Человек с именем " + human2.toString() );
-        System.out.println("Человек с именем " + human3.toString() );
-        
+        Name name4 = new Name("Чудов", "Иван", null);
+        Name name5 = new Name("Чудов", "Петр", null);
+        Name name6 = new Name(null, "Борис", null);
+
+        // Human human1 = new Human(name1, 152 );
+        // Human human2 = new Human(name2, 167);
+        // Human human3 = new Human(name3, 189);
+
+        Human human4 = new Human(name4, null);
+        Human human5 = new Human(name5, human4);
+        Human human6 = new Human(name6, human5);
+
+        System.out.println(human4.toString());
+        System.out.println(human5.toString());
+        System.out.println(human6.toString());
     }
 
     public static void testNames(){

@@ -12,6 +12,18 @@ public class Name {
         this.middle_name = middle_name;
     }
 
+    //Геттеры для ФИО
+    public String getLastname(){
+        return lastname;
+    }
+    public String getFirstname(){
+        return firstname;
+    }
+    public String getMiddle_name(){
+        return middle_name;
+    }
+
+
     @Override
     public String toString(){
         
