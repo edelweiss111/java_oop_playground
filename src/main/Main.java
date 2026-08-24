@@ -4,12 +4,60 @@ import models.*;
 public class Main {
     public static void main(String[] args) {
 
-        testPoints();
-        testHumans();
-        testTimes();
-        testHouses();
-        testLines();
-        testEmployee();
+        testPolylines();
+        // testStudent();
+        // testPoints();
+        // testHumans();
+        // testTimes();
+        // testHouses();
+        // testLines();
+        // testEmployee();
+
+    }
+
+    public static void testPolylines(){
+        Point A = new Point(1, 5);
+        Point B = new Point(2, 8);
+        Point C = new Point(5, 3);
+        Point D = new Point(2, -5);
+        Point E = new Point(4, -8);
+
+        Point points1[] = {A, B, C};
+        Polyline ABC = new Polyline(points1);
+
+        Polyline ADEC = new Polyline(new Point[] {ABC.getPoint()[0], D, E, ABC.getPoint()[2]});
+
+        System.out.println(ABC.toString());
+        System.out.println(ADEC.toString());
+
+        //Сдвигаем начало у первой линии
+        ABC.getPoint()[0].setX(0);
+        ABC.getPoint()[0].setY(0);
+
+        System.out.println(ADEC.toString());
+    }
+
+
+    public static void testStudent(){
+        int[] grades = {3, 4, 5};
+
+        Student vasya = new Student("Вася", grades);
+        Student petya = new Student("Петя", vasya.getGrades());
+
+        //Меняем первую оценку у Пети
+        petya.getGrades()[0] = 5;
+
+        System.out.println(vasya.toString());
+        System.out.println(petya.toString());
+
+        Student andrey = new Student("Андрей", vasya.getGrades().clone());
+
+        //Меняем оценку у Васи
+        vasya.getGrades()[1] = 3;
+
+        System.out.println(vasya.toString());
+
+        System.out.println(andrey.toString());
 
     }
     
