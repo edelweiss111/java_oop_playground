@@ -4,6 +4,7 @@ public class Department {
     
     private String name;
     private Employee boss;
+    private Employee[] employees;
 
     public Department(String name, Employee boss){
         this.name = name;
@@ -19,8 +20,16 @@ public class Department {
         return this.boss;
     }
 
-    //сеттер начальника
+    public Employee[] getEmployees(){
+        return this.employees;
+    }
+
+    //сеттеры
     public void setBoss(Employee boss){
         this.boss = boss;
+    }
+
+    public void setEmployees(Employee[] employees){
+        this.employees = employees;
     }
 }

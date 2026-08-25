@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         
-        testCityes();
+        // testCityes();
         // testPolylines();
         // testStudent();
         // testPoints();
@@ -13,7 +13,7 @@ public class Main {
         // testTimes();
         // testHouses();
         // testLines();
-        // testEmployee();
+        testEmployee();
 
     }
 
@@ -119,11 +119,14 @@ public class Main {
         Employee kozlov = new Employee("Козлов", IT);
         Employee sidorov = new Employee("Сидоров", IT);
 
+        IT.setEmployees(new Employee[]{petrov, kozlov, sidorov});
         IT.setBoss(kozlov);
 
-        System.out.println(petrov);
-        System.out.println(kozlov);
-        System.out.println(sidorov);
+        // System.out.println(petrov);
+        // System.out.println(kozlov);
+        // System.out.println(sidorov);
+
+        System.out.println(sidorov.getDepartmenEmployees());
 
     }
 
