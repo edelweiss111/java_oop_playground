@@ -10,6 +10,19 @@ public class Human {
         this.father = father;
     }
 
+    //Делегирование конструкторов
+    public Human(Name name) {
+        this(name, null);
+    }
+
+    public Human(String name){
+        this(new Name(name), null);
+    }
+
+    public Human(String name, Human father){
+        this(new Name(name), father);
+    }
+
     //Геттер имени человека
     public Name getName(){
         return name;

@@ -2,7 +2,7 @@ package models;
 
 public class House {
 
-    private int floors;
+    private final int floors;
 
     public House(int floors){
         this.floors = floors;

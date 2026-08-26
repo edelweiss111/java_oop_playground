@@ -12,6 +12,15 @@ public class Name {
         this.middle_name = middle_name;
     }
 
+    //Делегирование конструкторы
+    public Name(String firstname){
+        this(null, firstname, null);
+    }
+
+    public Name(String lastname, String firstname){
+        this(lastname, firstname, null);
+    }
+
     //Геттеры для ФИО
     public String getLastname(){
         return lastname;

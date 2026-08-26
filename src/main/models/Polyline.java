@@ -8,6 +8,8 @@ public class Polyline {
         this.points = points;
     }
 
+    public Polyline(){}
+
     //Геттер точек
     public Point[] getPoint(){
         return this.points;

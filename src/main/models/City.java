@@ -6,7 +6,7 @@ public class City {
     private String name;
     private Path[] pathes;
 
-    public City (String name, Path[] pathes){
+    public City (String name, Path ... pathes){
         this.name = name;
         this.pathes = pathes;
     }
