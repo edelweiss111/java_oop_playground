@@ -28,9 +28,12 @@ public class HumanTest {
         Human human8 = new Human(name7, human7);
         Human human9 = new Human("Александр", human8);
 
+        Human human10 = new Human("Андрей", human9);
+
 
         System.out.println(human7.toString());
         System.out.println(human8.toString());
         System.out.println(human9.toString());
+        System.out.println(human10.toString());
     }
 }

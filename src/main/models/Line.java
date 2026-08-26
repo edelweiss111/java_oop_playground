@@ -15,6 +15,20 @@ public class Line {
         this.end = new Point(x2, y2);
     }
 
+    public int getLength(){
+        //Длины катетов
+        double leg1 = end.getX() - start.getX();
+        double leg2 = end.getY() - start.getY();
+
+        //Длина расстояния (с запятой)
+        double d = Math.sqrt(Math.pow(leg1, 2) + Math.pow(leg2, 2));
+
+        //Округление
+        int result = (int) Math.round(d);
+
+        return result;
+    }
+
     @Override
     public String toString(){
         return "Линия от %s до %s".formatted(start, end);

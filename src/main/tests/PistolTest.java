@@ -7,11 +7,11 @@ public class PistolTest {
     public static void testPistol(){
         Pistol gun = new Pistol(3);
 
-        System.out.println(gun.shoot());
-        System.out.println(gun.shoot());
-        System.out.println(gun.shoot());
-        System.out.println(gun.shoot());
-        System.out.println(gun.shoot());
+        gun.shoot();
+        gun.shoot();
+        gun.shoot();
+        gun.shoot();
+        gun.shoot();
     }
     
 }

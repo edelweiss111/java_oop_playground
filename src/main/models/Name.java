@@ -4,12 +4,12 @@ public class Name {
 
     private String lastname;
     private String firstname;
-    private String middle_name;
+    private String middlename;
 
-    public Name(String lastname, String firstname, String middle_name){
+    public Name(String lastname, String firstname, String middlename){
         this.lastname = lastname;
         this.firstname = firstname;
-        this.middle_name = middle_name;
+        this.middlename = middlename;
     }
 
     //Делегирование конструкторы
@@ -28,8 +28,8 @@ public class Name {
     public String getFirstname(){
         return firstname;
     }
-    public String getMiddle_name(){
-        return middle_name;
+    public String getMiddlename(){
+        return middlename;
     }
 
 
@@ -42,7 +42,7 @@ public class Name {
    
         if (firstname != null) result += firstname + " ";
  
-        if (middle_name != null) result += middle_name;
+        if (middlename != null) result += middlename;
 
         return result;
     }

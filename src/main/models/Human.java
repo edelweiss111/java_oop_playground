@@ -27,39 +27,57 @@ public class Human {
     public Name getName(){
         return name;
     }
+
+    public String getFirstname(){
+        return name.getFirstname();
+    }
+
+    public String getMiddlename(){
+        return name.getMiddlename();
+    }
+
+    public String getLastname(){
+        if (name.getLastname() != null) return name.getLastname();
+
+        if (father != null) return father.getLastname();
+
+        else return null;
+    }
+
+
     
 
     @Override
     public String toString() {
         String lastname = name.getLastname();
         String firstname = name.getFirstname();
-        String middle_name = name.getMiddle_name();
+        String middlename = name.getMiddlename();
 
         if (father != null) {
             //Берем фамилию отца, если своя не указана, а у него указана
-            if (lastname == null && father.getName().getLastname() != null) lastname = father.getName().getLastname();
+            if (lastname == null) lastname = father.getLastname();
 
             //Склонение отчества в зависимости от имени (если оно указано)
-            if (middle_name == null && father.getName().getFirstname() != null){
+            if (middlename == null && father.getName().getFirstname() != null){
                 String fatherName = father.getName().getFirstname();
 
                 if (fatherName.endsWith("а") || fatherName.endsWith("я")) {
                     int length = fatherName.length();
-                    middle_name = fatherName.substring(0, length-1) + "ич";
+                    middlename = fatherName.substring(0, length-1) + "ич";
                 }
 
                 else if (fatherName.endsWith("й") || fatherName.endsWith("ь")) {
                     int length = fatherName.length();
-                    middle_name = fatherName.substring(0, length-1) + "евич";
+                    middlename = fatherName.substring(0, length-1) + "евич";
                 }
 
-                else middle_name = fatherName + "ович";
+                else middlename = fatherName + "ович";
             }
         }
         String result = "";
         if (lastname != null) result += lastname + " ";
         if (firstname != null) result += firstname + " ";
-        if (middle_name != null) result += middle_name;
+        if (middlename != null) result += middlename;
 
         return result;
     }

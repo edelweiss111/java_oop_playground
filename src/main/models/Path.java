@@ -2,16 +2,16 @@ package models;
 
 public class Path {
 
-    private City city_dest;
+    private City cityDest;
     private int cost;
 
-    public Path(City city_dest, int cost){
-        this.city_dest = city_dest;
+    public Path(City cityDest, int cost){
+        this.cityDest = cityDest;
         this.cost = cost;
     }
 
     public City getCity(){
-        return this.city_dest;
+        return this.cityDest;
     }
     
     public int getCost(){
@@ -20,7 +20,7 @@ public class Path {
 
     @Override
     public String toString(){
-        return "%s: %d".formatted(city_dest.getName(), cost);
+        return "%s: %d".formatted(cityDest.getName(), cost);
     }
 
 

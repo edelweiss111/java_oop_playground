@@ -11,12 +11,12 @@ public class Pistol {
         this(5);
     }
 
-    public String shoot(){
+    public void shoot(){
         if (cartridges > 0){
             this.cartridges -= 1;
-            return "Бах";
+            System.out.println("БАХ");
         }
 
-        else return "Клац";
+        else System.out.println("КЛАЦ");
     }
 }
