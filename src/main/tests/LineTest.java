@@ -20,7 +20,7 @@ public class LineTest {
         System.out.println(AB.toString());
         // System.out.println(CD.toString());
         // System.out.println(AD.toString());
-        // System.out.println(line4.toString());
+        System.out.println(line4.toString());
         System.out.println(AB.getLength());
 
     }

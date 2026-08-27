@@ -4,7 +4,8 @@ import tests.*;
 public class Main {
     public static void main(String[] args) {
 
-        FractionTest.testFraction();
+        SquareTest.testSquare();
+        // FractionTest.testFraction();
         // CatTest.TestCats();
         // PistolTest.testPistol();
         // CityTest.testCityes();

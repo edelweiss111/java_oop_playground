@@ -4,16 +4,56 @@ import java.util.Arrays;
 public class Polyline {
     private Point[] points;
 
-    public Polyline(Point[] points){
+    public Polyline(Point ... points){
         this.points = points;
     }
 
     public Polyline(){}
 
     //Геттер точек
-    public Point[] getPoint(){
+    public Point[] getPoints(){
         return this.points;
     }
+
+    //Сеттер для точек
+    public void addPoints(Point ... points){
+        if (this.points == null) {
+            this.points = points;
+            return; //Выход из метода, если условие сработало
+        }
+
+        Point[] result = new Point[points.length + this.points.length];
+
+        for (int i=0; i < this.points.length; i++){
+            result[i] = this.points[i];
+        }
+
+        for (int i=0; i < points.length; i++){
+            result[i+this.points.length] = points[i];
+        }
+
+        this.points = result;
+    }
+
+    //Метод возвращает длину линии
+    public double getLength(){
+            if (points == null || points.length < 2) return 0;
+            
+            double result = 0;
+
+            for (int i=0; i < points.length-1; i++){
+                Point p1 = points[i];
+                Point p2 = points[i+1];
+
+                //Длины катетов
+                double leg1 = p2.getX() - p1.getX();
+                double leg2 = p2.getY() - p1.getY();
+                
+                //Длина расстояния
+                result += Math.sqrt(Math.pow(leg1, 2) + Math.pow(leg2, 2));
+            }   
+            return result;
+        }
 
     @Override
     public String toString(){

@@ -17,6 +17,29 @@ public class Student {
         return this.grades;
     }
 
+    //Подсчет средней оценки
+    public double getMiddleGrade(){
+        if (grades == null || grades.length == 0) return 0;
+
+        double sum = 0;
+        for (int grade: grades){
+            sum += grade;
+        }
+
+        return sum/grades.length;
+    }
+
+    //Проверка на отличника
+    public boolean isExcellent(){
+        if (grades == null || grades.length == 0) return false;
+
+        for (int grade: grades){
+            if (grade != 5) return false;
+        }
+
+        return true;
+    }
+
     @Override
     public String toString(){
         return "%s %s".formatted(name, Arrays.toString(grades));
