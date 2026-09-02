@@ -6,7 +6,7 @@ public class HouseTest {
     
     public static void testHouses(){
     //1.1.5 сущности домов
-        House house1 = new House(1);
+        House house1 = new House(-3);
         House house2 = new House(5);
         House house3 = new House(23);
 

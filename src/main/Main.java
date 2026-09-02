@@ -4,14 +4,14 @@ import tests.*;
 public class Main {
     public static void main(String[] args) {
 
-        SquareTest.testSquare();
+        // SquareTest.testSquare();
         // FractionTest.testFraction();
         // CatTest.TestCats();
         // PistolTest.testPistol();
         // CityTest.testCityes();
         // PolylineTest.testPolylines();
         // StudentTest.testStudent();
-        // EmployeeTest.testEmployee();
+        EmployeeTest.testEmployee();
         // HumanTest.testHumans();
         // NameTest.testNames();
         // TimeTest.testTimes();

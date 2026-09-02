@@ -2,13 +2,19 @@ package models;
 
 public class Fraction {
 
-    private int numerator;
-    private int denominator;
+    private final int numerator;
+    private final int denominator;
 
     public Fraction(int numerator, int denominator){
 
         if (denominator == 0) {
         throw new IllegalArgumentException("Знаменатель не может быть равен 0");
+        }
+
+        //знаменатель всегда больше 0
+        if (denominator < 0) {
+            numerator = -numerator;
+            denominator = -denominator;
         }
 
         this.numerator = numerator;

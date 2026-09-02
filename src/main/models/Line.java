@@ -6,13 +6,31 @@ public class Line {
     private Point end;
 
     public Line(Point start, Point end){
-        this.start = start;
-        this.end = end;
+        this.start = new Point(start.getX(), start.getY());
+        this.end = new Point(end.getX(),end.getY());
     }
 
     public Line(int x1, int y1, int x2, int y2){
         this.start = new Point(x1, y1);
         this.end = new Point(x2, y2);
+    }
+
+    //геттеры без возможности изменять поля
+    public Point getStart(){
+        return new Point(this.start.getX(), this.start.getY());
+    }
+
+    public Point getEnd(){
+        return new Point(this.end.getX(), this.end.getY());
+    }
+
+    //сеттеры
+    public void setStart(Point start){
+        this.start = new Point(start.getX(), start.getY());
+    }
+
+    public void setEnd(Point end){
+        this.end = new Point(end.getX(),end.getY());
     }
 
     public int getLength(){

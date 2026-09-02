@@ -3,7 +3,7 @@ package models;
 public class Human {
 
     private Name name;
-    private Human father;
+    private final Human father;
 
     public Human(Name name, Human father) {
         this.name = name;
@@ -44,8 +44,10 @@ public class Human {
         else return null;
     }
 
-
-    
+    //геттер для отца
+    public Human getFather(){
+        return this.father;
+    }
 
     @Override
     public String toString() {

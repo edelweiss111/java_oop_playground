@@ -2,11 +2,15 @@ package models;
 
 public class Name {
 
-    private String lastname;
-    private String firstname;
-    private String middlename;
+    private final String lastname;
+    private final String firstname;
+    private final String middlename;
 
     public Name(String lastname, String firstname, String middlename){
+        if ((lastname == null || lastname.isBlank()) && (firstname == null || firstname.isBlank()) && (middlename == null || middlename.isBlank())){
+            throw new IllegalArgumentException("Хотя бы одно поле не должно быть пустым");
+        }
+
         this.lastname = lastname;
         this.firstname = firstname;
         this.middlename = middlename;

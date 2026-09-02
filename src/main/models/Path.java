@@ -10,6 +10,7 @@ public class Path {
         this.cost = cost;
     }
 
+    //геттеры
     public City getCity(){
         return this.cityDest;
     }
@@ -18,12 +19,13 @@ public class Path {
         return this.cost;
     }
 
+    //сеттер
+    public void setCost(int cost){
+        this.cost = cost;
+    }
+
     @Override
     public String toString(){
         return "%s: %d".formatted(cityDest.getName(), cost);
-    }
-
-
-
-    
+    }   
 }

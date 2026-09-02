@@ -8,7 +8,7 @@ public class Department {
 
     public Department(String name, Employee boss){
         this.name = name;
-        this.boss = boss;
+        setBoss(boss);
     }
 
     //Геттеры
@@ -27,9 +27,16 @@ public class Department {
     //сеттеры
     public void setBoss(Employee boss){
         this.boss = boss;
+        //Меняем отдел у начальника, если он не совпадает с текущим
+        if(boss != null && boss.getDepartment() != this) boss.setDepartment(this);
     }
 
     public void setEmployees(Employee[] employees){
         this.employees = employees;
+    }
+
+    @Override
+    public String toString(){
+        return "Отдел %s, начальник %s".formatted(name, boss);
     }
 }

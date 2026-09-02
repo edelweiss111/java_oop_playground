@@ -9,9 +9,10 @@ public class Employee {
 
     public Employee(String name, Department department){
         this.name = name;
-        this.department = department;
+        setDepartment(department);
     }
 
+    //геттеры
     public String getName(){
         return this.name;
     }
@@ -22,6 +23,15 @@ public class Employee {
 
     public String getDepartmenEmployees(){
         return "Отдел %s, сотрудники: %s".formatted(department.getName(), Arrays.toString(this.department.getEmployees()));
+    }
+
+    public void setDepartment(Department department){
+        //Если сотрудник уже был начальником другого отдела, делаем его прошлый отдел null
+        if (this.department != null && this.department.getBoss() == this && this.department != department){
+            this.department.setBoss(null);
+        }
+        //меняем отдел
+        this.department = department;
     }
 
     @Override
@@ -37,6 +47,5 @@ public class Employee {
         // else return "%s работает в отделе %s, начальник которого %s".formatted(name, department.getName(), department.getBoss().getName());
 
         return this.name;
-    }
-    
+    }  
 }

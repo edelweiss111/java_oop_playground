@@ -6,7 +6,7 @@ public class NameTest {
     public static void testNames(){
     
     //1.1.3. сущности имён
-    Name name1 = new Name("Клеопатра");
+    Name name1 = new Name("");
     Name name2 = new Name("Пушкин", "Александр", "Сергеевич");
     Name name3 = new Name("Маяковский", "Владимир");
 

@@ -5,6 +5,7 @@ public class House {
     private final int floors;
 
     public House(int floors){
+        if (floors <= 0) throw new IllegalArgumentException("Количество этажей не может быть меньше либо равным 0");
         this.floors = floors;
     }
 
