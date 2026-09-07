@@ -25,6 +25,10 @@ public class City {
         return this.name;
     }
 
+    public Path[] getPathes() {
+        return this.pathes;
+    }
+
     public void addPath(City cityDest, int cost){
         if (cityDest == null || cityDest == this) return;
 

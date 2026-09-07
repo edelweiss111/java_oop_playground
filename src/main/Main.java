@@ -4,6 +4,9 @@ import tests.*;
 public class Main {
     public static void main(String[] args) {
 
+        Point3DTest.TestPoint3D();
+        // AutomaticRifleTest.TestAutomaticRifle();
+        // ReturnCityTest.testReturnCity();
         // SquareTest.testSquare();
         // FractionTest.testFraction();
         // CatTest.TestCats();
@@ -11,7 +14,7 @@ public class Main {
         // CityTest.testCityes();
         // PolylineTest.testPolylines();
         // StudentTest.testStudent();
-        EmployeeTest.testEmployee();
+        // EmployeeTest.testEmployee();
         // HumanTest.testHumans();
         // NameTest.testNames();
         // TimeTest.testTimes();
