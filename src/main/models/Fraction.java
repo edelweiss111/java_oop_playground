@@ -1,6 +1,6 @@
 package models;
 
-public final class Fraction {
+public final class Fraction extends Number {
 
     private final int numerator;
     private final int denominator;
@@ -33,6 +33,28 @@ public final class Fraction {
 
     public int getDenominator(){
         return denominator;
+    }
+
+    //Реализация абстрактных методов класса Number
+
+    @Override
+    public int intValue(){
+        return numerator/denominator;
+    }
+
+    @Override
+    public long longValue(){
+        return (long) numerator/denominator;
+    }
+
+    @Override
+    public float floatValue(){
+        return (float) numerator/denominator;
+    }
+
+    @Override
+    public double doubleValue(){
+        return (double) numerator/denominator;
     }
 
     //Сумма с другой дробью или числом

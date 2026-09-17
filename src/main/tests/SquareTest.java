@@ -1,6 +1,6 @@
 package tests;
 import models.Polyline;
-import models.Point;
+import models.Point2D;
 
 import models.Square;
 

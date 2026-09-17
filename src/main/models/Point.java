@@ -1,25 +1,22 @@
 package models;
 
-public sealed class Point permits Point3D {
-
+public class Point {
     private int x;
-    private int y;
-    
-    public Point(int x, int y){
+
+    public Point(int x){
         this.x = x;
-        this.y = y;
     }
 
-    //геттеры для координа
-    public int getX() { return x; }
-    public int getY() { return y; }
-
-    //сеттеры для координат
-    public void setX(int x) { this.x = x; }
-    public void setY(int y) { this.y = y; }
+    public int getX(){
+        return x;
+    }
+    
+    public void setX(int x){
+        this.x = x;
+    }
 
     @Override
     public String toString() {
-        return "{%d;%d}".formatted(x, y);
+        return "{%d}".formatted(x);
     }
 }

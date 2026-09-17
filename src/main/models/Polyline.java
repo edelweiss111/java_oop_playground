@@ -2,27 +2,27 @@ package models;
 import java.util.Arrays;
 
 public class Polyline {
-    private Point[] points;
+    private Point2D[] points;
 
-    public Polyline(Point ... points){
+    public Polyline(Point2D ... points){
         this.points = points;
     }
 
     public Polyline(){}
 
     //Геттер точек
-    public Point[] getPoints(){
+    public Point2D[] getPoints(){
         return this.points;
     }
 
     //Сеттер для точек
-    public void addPoints(Point ... points){
+    public void addPoints(Point2D ... points){
         if (this.points == null) {
             this.points = points;
             return; //Выход из метода, если условие сработало
         }
 
-        Point[] result = new Point[points.length + this.points.length];
+        Point2D[] result = new Point2D[points.length + this.points.length];
 
         for (int i=0; i < this.points.length; i++){
             result[i] = this.points[i];
@@ -42,8 +42,8 @@ public class Polyline {
             double result = 0;
 
             for (int i=0; i < points.length-1; i++){
-                Point p1 = points[i];
-                Point p2 = points[i+1];
+                Point2D p1 = points[i];
+                Point2D p2 = points[i+1];
 
                 //Длины катетов
                 double leg1 = p2.getX() - p1.getX();

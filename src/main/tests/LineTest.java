@@ -5,10 +5,10 @@ import models.*;
 public class LineTest {
     public static void testLines(){
     //1.2.1 сущности линий
-    Point A = new Point(1, 1);
-    Point B = new Point(10, 15);
-    Point C = new Point(5, 10);
-    Point D = new Point(10, 10);
+    Point2D A = new Point2D(1, 1);
+    Point2D B = new Point2D(10, 15);
+    Point2D C = new Point2D(5, 10);
+    Point2D D = new Point2D(10, 10);
 
     Line AB = new Line(A, B);
     Line line1 = new Line(A, B);

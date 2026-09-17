@@ -1,6 +1,6 @@
 package models;
 
-public final class Point3D extends Point{
+public final class Point3D extends Point2D{
     
     private int z;
 

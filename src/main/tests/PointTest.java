@@ -1,14 +1,15 @@
 package tests;
 
-import models.Point;
+import models.Point2D;
+import models.Point2D;
 
 public class PointTest {
     public static void testPoints(){
 
     //1.1.1 сущности точки
-    Point A = new Point(10, 20);
-    Point B = new Point(-10, 13);
-    Point C = new Point(0, -9);
+    Point2D A = new Point2D(10, 20);
+    Point2D B = new Point2D(-10, 13);
+    Point2D C = new Point2D(0, -9);
 
     System.out.println("A = " + A.toString());
     System.out.println("B = " + B.toString());

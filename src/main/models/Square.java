@@ -1,17 +1,17 @@
 package models;
 
 public class Square {
-    private Point point;
+    private Point2D point;
     private int sideLength;
 
-    public Square(Point point, int sideLength){
+    public Square(Point2D point, int sideLength){
         this.point = point;
         //Можно вызвать сеттер для стороны, в котором уже прописана валидация
         setSideLength(sideLength);
     }
 
     public Square(int a, int b, int sideLength){
-        this(new Point(a, b), sideLength);
+        this(new Point2D(a, b), sideLength);
     }
 
     //геттер для стороны
@@ -26,10 +26,10 @@ public class Square {
     }
 
     public Polyline getPolyline(){
-       Point a = this.point;
-       Point b = new Point(this.point.getX() + sideLength, this.point.getY());
-       Point c = new Point(b.getX(), b.getY() - sideLength);
-       Point d = new Point(c.getX() - sideLength, c.getY());
+       Point2D a = this.point;
+       Point2D b = new Point2D(this.point.getX() + sideLength, this.point.getY());
+       Point2D c = new Point2D(b.getX(), b.getY() - sideLength);
+       Point2D d = new Point2D(c.getX() - sideLength, c.getY());
         
        //возвращаем ломанную линию, замыкающую контур квадрата
        return new Polyline(a, b, c, d, a);

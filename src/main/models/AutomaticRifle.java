@@ -3,8 +3,8 @@ package models;
 public class AutomaticRifle extends Pistol {
     private final int fireRate;
 
-    public AutomaticRifle(int cartridges, int maxCartridges, int fireRate){
-        super(cartridges, maxCartridges);
+    public AutomaticRifle(int ammo, int maxAmmo, int fireRate){
+        super(ammo, maxAmmo);
         
         if (fireRate <= 0) throw new IllegalArgumentException("Скорострельность не может быть меньше 0");
 
@@ -15,8 +15,8 @@ public class AutomaticRifle extends Pistol {
         this(30, 30, 30);
     }
 
-    public AutomaticRifle(int maxCartidges){
-        this(maxCartidges, maxCartidges, maxCartidges/2);
+    public AutomaticRifle(int maxAmmo){
+        this(maxAmmo, maxAmmo, maxAmmo/2);
     }
 
     //Переопределение метода одиночного выстрела

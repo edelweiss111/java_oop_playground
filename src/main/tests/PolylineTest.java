@@ -1,17 +1,17 @@
 package tests;
 
-import models.Point;
+import models.Point2D;
 import models.Polyline;
 
 public class PolylineTest {
     public static void testPolylines(){
-        Point A = new Point(1, 5);
-        Point B = new Point(2, 8);
-        Point C = new Point(5, 3);
-        Point D = new Point(5, 15);
-        Point E = new Point(8, 10);
+        Point2D A = new Point2D(1, 5);
+        Point2D B = new Point2D(2, 8);
+        Point2D C = new Point2D(5, 3);
+        Point2D D = new Point2D(5, 15);
+        Point2D E = new Point2D(8, 10);
 
-        Point points1[] = {A, B, C};
+        Point2D points1[] = {A, B, C};
         Polyline ABC = new Polyline(points1);
 
         // Polyline ADEC = new Polyline(new Point[] {ABC.getPoint()[0], D, E, ABC.getPoint()[2]});

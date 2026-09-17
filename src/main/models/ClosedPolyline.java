@@ -2,7 +2,7 @@ package models;
 
 public class ClosedPolyline extends Polyline{
 
-    public ClosedPolyline(Point ... points){
+    public ClosedPolyline(Point2D ... points){
         super(points);
     }
 
@@ -11,11 +11,11 @@ public class ClosedPolyline extends Polyline{
         double result = super.getLength();
         if (result == 0) return 0;
         //Получаем список точек у родителя
-        Point[] points = getPoints();
+        Point2D[] points = getPoints();
 
         //Замыкаем кривую линию
-        Point end = points[points.length - 1];
-        Point start = points[0];
+        Point2D end = points[points.length - 1];
+        Point2D start = points[0];
 
         //Длины катетов
         double leg1 = start.getX() - end.getX();
