@@ -1,7 +1,6 @@
 package tests;
 
 import models.Point2D;
-import models.Point2D;
 
 public class PointTest {
     public static void testPoints(){

@@ -1,7 +1,7 @@
 package models;
 import java.util.Arrays;
 
-public class Polyline {
+public class Polyline implements Lengthable {
     private Point2D[] points;
 
     public Polyline(Point2D ... points){

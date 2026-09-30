@@ -13,7 +13,7 @@ public class Main {
         // PistolTest.testPistol();
         // CityTest.testCityes();
         // PolylineTest.testPolylines();
-        // StudentTest.testStudent();
+        StudentTest.testStudent();
         // EmployeeTest.testEmployee();
         // HumanTest.testHumans();
         // NameTest.testNames();
@@ -23,6 +23,13 @@ public class Main {
         // PointTest.testPoints();
         // BirdTest.TestBird();
         // ShapeTest.TestShape();
-        ConfigurablePointTest.TestConfigurablePoint();
+        // ConfigurablePointTest.TestConfigurablePoint();
+        // SummatorTest.testSummator();
+        // BirdMarketTest.testBirdMarket();
+        // AreaCalculatorTest.testAreaCalculator();
+        // MeowUtilsTest.testMeowUtils();
+        // TestLengthCalculator.lengthCalculatorTest();
+        // PolylineUtilsTest.testPolylineUtils();
+        // ShooterTest.testShooter();
     }
 }

@@ -1,6 +1,6 @@
 package models;
 
-public class Square {
+public class Square implements Polylineable{
     private Point2D point;
     private int sideLength;
 
@@ -32,7 +32,7 @@ public class Square {
        Point2D d = new Point2D(c.getX() - sideLength, c.getY());
         
        //возвращаем ломанную линию, замыкающую контур квадрата
-       return new Polyline(a, b, c, d, a);
+       return new ClosedPolyline(a, b, c, d, a);
     }
 
     @Override

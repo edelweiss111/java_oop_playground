@@ -1,6 +1,6 @@
 package models;
 
-public class Line {
+public class Line implements Lengthable{
 
     private Point2D start;
     private Point2D end;
@@ -33,7 +33,7 @@ public class Line {
         this.end = new Point2D(end.getX(),end.getY());
     }
 
-    public int getLength(){
+    public double getLength(){
         //Длины катетов
         double leg1 = end.getX() - start.getX();
         double leg2 = end.getY() - start.getY();

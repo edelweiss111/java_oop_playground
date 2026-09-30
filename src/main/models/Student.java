@@ -4,17 +4,24 @@ import java.util.Arrays;
 
 public class Student {
     private String name;
-    private int[] grades;
+    private int[] grades = new int[0];
+    private GradeRule rule;
     
-    //конструктор с возможностью произвольного количества оценок
-    public Student(String name, int ... grades){
-        for (int i=0; i < grades.length; i++){
-            if (grades[i] < 2 || grades[i] > 5) throw new IllegalArgumentException("Оценки могут быть в диапазоне от 2 до 5");
-        }
-    
+    //конструктор с правилом для оценок
+    public Student(String name, GradeRule rule, int ... grades){
         this.name = name;
-        //Делаем клон массива оценок для обеспечения инкапсуляции
-        this.grades = grades.clone();
+        this.rule = rule;
+
+        if (grades != null){
+            for (int grade: grades){
+                addGrade(grade);
+            }
+        } 
+    }
+
+    //Конструктор без правила обработки оценок
+    public Student(String name, int ... grades){
+        this(name, null, grades);
     }
 
     //геттер оценок
@@ -43,6 +50,20 @@ public class Student {
         }
 
         return true;
+    }
+
+    public void addGrade(int grade){
+        if(rule == null || rule.isValid(grade)){
+            //инициализируем новый массив длиной +1
+            int[] newGrades = new int[this.grades.length + 1];
+            //копируем старый массив в новый
+            System.arraycopy(this.grades, 0, newGrades, 0, this.grades.length);
+            //добавляем новую оценку
+            newGrades[newGrades.length - 1] = grade;
+            //обновляем текущее поле
+            this.grades = newGrades;
+        }
+        else throw new IllegalArgumentException("Некорректная оценка: " + grade);
     }
 
     @Override

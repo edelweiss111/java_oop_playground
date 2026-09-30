@@ -2,12 +2,19 @@ package tests;
 
 import java.util.Arrays;
 import models.Student;
+import utils.BinaryGradeRule;
+import utils.EvenGradeRule;
 
 public class StudentTest {
     public static void testStudent(){
-        int[] grades = {5, 5, 5, 5};
+        Student vasya = new Student("Вася", new BinaryGradeRule(), 1,0,1,1);
+        System.out.println(vasya);
 
-        Student vasya = new Student("Вася", 2, 4, 5, 4);
+        Student petya = new Student("Петя", new EvenGradeRule(), 2, 4, 6, 8);
+        System.out.println(petya);
+
+        vasya.addGrade(3);
+        petya.addGrade(3);
         // Student maksim = new Student("Максим");
         // Student petya = new Student("Петя", grades );
 

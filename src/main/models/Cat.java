@@ -1,6 +1,6 @@
 package models;
 
-public class Cat {
+public class Cat implements Meowable{
     private String name;
 
     public Cat(String name){
@@ -17,6 +17,7 @@ public class Cat {
         System.out.println("%s: %s!".formatted(name, result));
     }
 
+    @Override 
     public void meow(){
         meow(1);
     }

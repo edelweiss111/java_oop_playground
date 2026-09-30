@@ -1,6 +1,6 @@
 package models;
 
-abstract class Bird {
+public abstract class Bird {
     private String name;
 
     public Bird(String name){
@@ -11,5 +11,5 @@ abstract class Bird {
         return name;
     }
 
-    abstract void sing();
+    public abstract void sing();
 }

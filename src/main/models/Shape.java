@@ -1,5 +1,5 @@
 package models;
 
-abstract class Shape {
-    abstract double getArea();
+public abstract class Shape {
+    public abstract double getArea();
 }
