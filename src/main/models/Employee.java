@@ -21,14 +21,17 @@ public class Employee {
         return this.department;
     }
 
-    public String getDepartmenEmployees(){
-        return "Отдел %s, сотрудники: %s".formatted(department.getName(), Arrays.toString(this.department.getEmployees()));
+    public String getDepartmentEmployees() {
+    if (department == null) {
+        return "Сотрудник %s не привязан к отделу".formatted(name);
+    }
+    return "Отдел %s, сотрудники: %s".formatted(department.getName(), Arrays.toString(this.department.getEmployees()));
     }
 
     public void setDepartment(Department department){
         //Если сотрудник уже был начальником другого отдела, делаем его прошлый отдел null
-        if (this.department != null && this.department.getBoss() == this && this.department != department){
-            this.department.setBoss(null);
+        if (this.department != null && this.department.boss == this && this.department != department){
+            this.department.boss = null;
         }
         //меняем отдел
         this.department = department;

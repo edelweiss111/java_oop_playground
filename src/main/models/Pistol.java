@@ -32,8 +32,10 @@ public class Pistol extends Weapon{
     }
 
     // Разрядить пистолет
-    public int unload(){
-       return load(0);
+    public int unload() {
+        int currentAmmo = this.ammo;
+        this.ammo = 0;              
+        return currentAmmo;
     }
 
     @Override 

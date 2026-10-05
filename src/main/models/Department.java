@@ -3,7 +3,7 @@ package models;
 public class Department {
     
     private String name;
-    private Employee boss;
+    Employee boss;
     private Employee[] employees;
 
     public Department(String name, Employee boss){
@@ -26,9 +26,16 @@ public class Department {
 
     //сеттеры
     public void setBoss(Employee boss){
+        if (boss == null) {
+            this.boss = null;
+            return;
+        }
+
+        // Если назначаемый начальник работает в другом отделе, переводим его в текущий отдел
+        if (boss.getDepartment() != this) {
+            boss.setDepartment(this);
+        }
         this.boss = boss;
-        //Меняем отдел у начальника, если он не совпадает с текущим
-        if(boss != null && boss.getDepartment() != this) boss.setDepartment(this);
     }
 
     public void setEmployees(Employee[] employees){
