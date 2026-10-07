@@ -2,6 +2,8 @@ package models;
 
 import java.util.Arrays;
 
+import exceptions.InvalidGradeException;
+
 public class Student {
     private String name;
     private int[] grades = new int[0];
@@ -63,7 +65,19 @@ public class Student {
             //обновляем текущее поле
             this.grades = newGrades;
         }
-        else throw new IllegalArgumentException("Некорректная оценка: " + grade);
+        else throw new InvalidGradeException("Некорректная оценка: %d у студента %s ".formatted(grade, name));
+    }
+
+    public void removeLastGrade(){
+        if (this.grades == null || this.grades.length == 0) {
+            return; // Нечего удалять
+        }
+        //создаем новый массив длиной -1
+        int[] newGrades = new int[this.grades.length - 1];
+        //копируем в него старый без последнего элемента
+        System.arraycopy(this.grades, 0, newGrades, 0, this.grades.length - 1);
+        //обновляем поле
+        this.grades = newGrades;
     }
 
     @Override

@@ -31,6 +31,9 @@ public class Main {
         // TestLengthCalculator.lengthCalculatorTest();
         // PolylineUtilsTest.testPolylineUtils();
         // ShooterTest.testShooter();
-        PowStringTest.testPowString(args);
+        // PowStringTest.testPowString(args);
+        // ConnectionServiceTest.testConnectionService();
+        // StringsUtilTest.testStringsUtil();
+        StudentTest.testStudentUtil();
     }
 }
