@@ -40,5 +40,8 @@ public class Main {
         // LineTest.testLineEquals();
         // PolylineTest.testPolylinesEquals();
         // CityTest.testCityEquals();
+        // FractionTest.testFractionClone();
+        // Point3DTest.TestPointClone();
+        LineTest.testLineClone();
     }
 }

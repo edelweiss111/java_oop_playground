@@ -2,7 +2,7 @@ package models;
 
 import java.util.Objects;
 
-public sealed class Point2D permits Point3D {
+public sealed class Point2D implements Cloneable permits Point3D{
 
     private int x;
     private int y;
@@ -37,5 +37,10 @@ public sealed class Point2D permits Point3D {
         Point2D point = (Point2D) obj;
         if (point.x != this.x || point.y != this.y) return false;
         return true;
+    }
+
+    @Override
+    public Point2D clone() throws CloneNotSupportedException{
+        return (Point2D) super.clone();
     }
 }

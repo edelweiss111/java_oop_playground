@@ -3,6 +3,7 @@ package tests;
 import models.*;
 
 public class LineTest {
+    //Метод для контрольной
     public static void testLines(){
         //Сущности линий
         Point2D A = new Point2D(1, 1);
@@ -56,5 +57,25 @@ public class LineTest {
         System.out.println("AB и BA " + AB.equals(BA));
         System.out.println("AB и CD " + AB.equals(CD));
         System.out.println("AB и line " + AB.equals(line));
+    }
+    public static void testLineClone(){
+        Point2D A = new Point2D(1, 1);
+        Point2D B = new Point2D(10, 15);
+
+        Line AB = new Line(A, B);
+        System.out.println("AB " + AB.toString());
+
+        try{
+            Line AB2 = AB.clone();
+            System.out.println("Клон АВ " + AB2.toString());
+
+            System.out.println("Меняем координаты точки А (2;2) ");
+            A.setX(2);
+            A.setY(2);
+            AB.setStart(A);
+
+            System.out.println("Новые координаты АВ " + AB.toString());
+            System.out.println("Координаты клона " + AB2.toString());
+        }catch (CloneNotSupportedException e){System.out.println(e);}
     }
 }

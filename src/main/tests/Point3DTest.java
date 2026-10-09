@@ -19,4 +19,14 @@ public class Point3DTest {
         System.out.println(A.toString() + C.toString());
         System.out.println(A.equals(C));
     }
+
+    public static void TestPointClone(){
+        Point3D point1 = new Point3D(1, 0, 4);
+        
+        try{
+            Point3D point2 = point1.clone();
+            System.out.println("Точка 1 " + point1.toString());
+            System.out.println("Точка 2 (ее клон) " + point2.toString());
+        }catch (CloneNotSupportedException e){System.out.println(e);}   
+    }
 }

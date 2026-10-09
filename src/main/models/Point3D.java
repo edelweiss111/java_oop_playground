@@ -33,4 +33,9 @@ public final class Point3D extends Point2D{
         if (point.getX() != super.getX() || point.getY() != super.getY() || point.getZ() != z) return false;
         return true;
     }
+
+    @Override
+    public Point3D clone() throws CloneNotSupportedException{
+        return (Point3D) super.clone();
+    }
 }

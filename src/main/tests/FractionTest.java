@@ -31,5 +31,16 @@ public class FractionTest {
         System.out.println("1/3 и 1/2" + fraction1.equals(fraction3));
         System.out.println("1/2 и 1/2" + fraction3.equals(fraction4));
     }
-    
+
+    public static void testFractionClone(){
+        Fraction fraction1 = new Fraction(1, 3);
+        try{
+            Fraction fraction2 = fraction1.clone();
+            System.out.println("1 дробь - " + fraction1);
+            System.out.println("2 дробь (её клон) - " + fraction2);
+
+        }catch (CloneNotSupportedException e){
+            System.out.println(e);
+        }
+    }   
 }

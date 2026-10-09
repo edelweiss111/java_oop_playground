@@ -2,7 +2,7 @@ package models;
 
 import java.util.Objects;
 
-public class Line implements Lengthable{
+public class Line implements Lengthable, Cloneable{
 
     private Point2D start;
     private Point2D end;
@@ -68,5 +68,14 @@ public class Line implements Lengthable{
         if (line.start.equals(this.start) && line.end.equals(this.end)) return true;
         if (line.start.equals(this.end) && line.end.equals(this.start)) return true;
         return false;
+    }
+
+    @Override
+    public Line clone() throws CloneNotSupportedException{
+        Line copy = (Line) super.clone();
+        //т.к. поля - это ссылки на объекты, нужно сделать их клоны
+        copy.start = this.start.clone(); 
+        copy.end = this.end.clone();
+        return copy; 
     }
 }
