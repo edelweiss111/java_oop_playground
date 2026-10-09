@@ -1,5 +1,9 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ClosedPolyline extends Polyline{
 
     public ClosedPolyline(Point2D ... points){
@@ -25,5 +29,15 @@ public class ClosedPolyline extends Polyline{
         result += Math.sqrt(Math.pow(leg1, 2) + Math.pow(leg2, 2));
 
         return result;
+    }
+
+    @Override
+    protected List<Point2D> getFullPoints(){
+        List<Point2D> full = super.getFullPoints();
+        //Если список точек не пустой, добавляем в конец точку начала (замыкаем линию)
+        if (!full.isEmpty()) {
+            full.add(full.get(0));
+        }
+        return full;
     }
 }

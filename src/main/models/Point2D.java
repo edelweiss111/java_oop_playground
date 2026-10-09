@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public sealed class Point2D permits Point3D {
 
     private int x;
@@ -21,5 +23,19 @@ public sealed class Point2D permits Point3D {
     @Override
     public String toString() {
         return "{%d;%d}".formatted(x, y);
+    }
+
+    @Override 
+    public int hashCode(){
+        return Objects.hash(x, y);
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != getClass()) return false;
+        Point2D point = (Point2D) obj;
+        if (point.x != this.x || point.y != this.y) return false;
+        return true;
     }
 }

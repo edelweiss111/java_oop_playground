@@ -34,6 +34,11 @@ public class Main {
         // PowStringTest.testPowString(args);
         // ConnectionServiceTest.testConnectionService();
         // StringsUtilTest.testStringsUtil();
-        StudentTest.testStudentUtil();
+        // StudentTest.testStudentUtil();
+        // FractionTest.testFractionEquals();
+        // Point3DTest.TestPointEquals();
+        // LineTest.testLineEquals();
+        // PolylineTest.testPolylinesEquals();
+        // CityTest.testCityEquals();
     }
 }

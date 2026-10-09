@@ -1,6 +1,7 @@
 package models;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 import exceptions.InvalidGradeException;
 
@@ -83,5 +84,24 @@ public class Student {
     @Override
     public String toString(){
         return "%s %s".formatted(name, Arrays.toString(grades));
+    }
+
+    @Override
+    public int hashCode(){
+        //Окгругляем оценку (4.9 и 5 это одна оценка)
+        int roundGrade = (int) Math.round(getMiddleGrade());
+        return Objects.hash(roundGrade, name);
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj) return true;
+        if(obj == null || obj.getClass() != getClass()) return false;
+        Student student = (Student) obj;
+        //округляем средние оценки
+        int myGrade = (int) Math.round(getMiddleGrade());
+        int hisGrade = (int) Math.round(student.getMiddleGrade());
+        if(!Objects.equals(name, student.name) || myGrade != hisGrade) return false;
+        return true;
     }
 }

@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public final class Fraction extends Number {
 
     private final int numerator;
@@ -35,28 +37,7 @@ public final class Fraction extends Number {
         return denominator;
     }
 
-    //Реализация абстрактных методов класса Number
-
-    @Override
-    public int intValue(){
-        return numerator/denominator;
-    }
-
-    @Override
-    public long longValue(){
-        return (long) numerator/denominator;
-    }
-
-    @Override
-    public float floatValue(){
-        return (float) numerator/denominator;
-    }
-
-    @Override
-    public double doubleValue(){
-        return (double) numerator/denominator;
-    }
-
+    
     //Сумма с другой дробью или числом
     public Fraction sum(Fraction fraction){
         int newDenominator = this.getDenominator() * fraction.getDenominator();
@@ -119,6 +100,53 @@ public final class Fraction extends Number {
 
     public Fraction divide(int num){
         return divide(new Fraction(num));
+    }
+
+    //Реализация абстрактных методов класса Number
+    @Override
+    public int intValue(){
+        return numerator/denominator;
+    }
+
+    @Override
+    public long longValue(){
+        return (long) numerator/denominator;
+    }
+
+    @Override
+    public float floatValue(){
+        return (float) numerator/denominator;
+    }
+
+    @Override
+    public double doubleValue(){
+        return (double) numerator/denominator;
+    }
+
+    //Переопределяем hashCode для реализации сравнения 
+    @Override
+    public int hashCode(){
+        return Objects.hash(numerator, denominator);
+    }
+
+    //Переопределяем метод сравнения
+    @Override 
+    public boolean equals(Object obj){
+        //Если объект - наш исходный
+        if(this == obj) return true;
+        //Если передан пустой объект
+        if(obj == null) return false;
+        //Если переданный объект другого класса
+        if(obj.getClass() != getClass()) return false;
+
+        //Создаем объект, чтобы сравнить его поля с нашим
+        Fraction fraction = (Fraction) obj;
+
+        //Если числитель или знаменатель отличаются
+        if (this.numerator != fraction.numerator || this.denominator != fraction.denominator) return false;
+
+        //если все проверки пройдены
+        return true;
     }
 
     @Override

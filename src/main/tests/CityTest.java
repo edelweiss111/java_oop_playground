@@ -38,4 +38,22 @@ public class CityTest {
         System.out.println(A.toString());
         System.out.println(B.toString());
     }
+
+    public static void testCityEquals(){
+        City A = new City("A");
+        City B = new City("B");
+        ReturnCity C = new ReturnCity("C");
+        ReturnCity D = new ReturnCity("D");
+
+        A.addPath(D, 2);
+        B.addPath(D, 4);
+        C.addPath(D, 2);
+
+        System.out.println(A.toString());
+        System.out.println(B.toString());
+        System.out.println(C.toString());
+        
+        System.out.println("A и B " + A.equals(B));
+        System.out.println("A и C " + A.equals(C));
+    }
 }

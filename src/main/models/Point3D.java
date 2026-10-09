@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public final class Point3D extends Point2D{
     
     private int z;
@@ -16,5 +18,19 @@ public final class Point3D extends Point2D{
     @Override
     public String toString() {
         return "{%d;%d;%d}".formatted(super.getX(), super.getY(), z);
+    }
+  
+    @Override 
+    public int hashCode(){
+        return Objects.hash(super.getX(), super.getY(), z);
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != getClass()) return false;
+        Point3D point = (Point3D) obj;
+        if (point.getX() != super.getX() || point.getY() != super.getY() || point.getZ() != z) return false;
+        return true;
     }
 }

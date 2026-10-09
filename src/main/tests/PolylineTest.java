@@ -1,5 +1,6 @@
 package tests;
 
+import models.ClosedPolyline;
 import models.Point2D;
 import models.Polyline;
 
@@ -14,24 +15,27 @@ public class PolylineTest {
         Point2D points1[] = {A, B, C};
         Polyline ABC = new Polyline(points1);
 
-        // Polyline ADEC = new Polyline(new Point[] {ABC.getPoint()[0], D, E, ABC.getPoint()[2]});
-
-        // //Линия без параметров
-        // Polyline line3 = new Polyline();
-
-        // System.out.println(ABC.toString());
-        // System.out.println(ADEC.toString());
-
-        // //Сдвигаем начало у первой линии
-        // ABC.getPoint()[0].setX(0);
-        // ABC.getPoint()[0].setY(0);
-
-        // System.out.println(ADEC.toString());
-
         System.out.println(ABC.getLength());
 
         ABC.addPoints(D, E);
 
         System.out.println(ABC.getLength());
+    }
+
+    public static void testPolylinesEquals(){
+        Point2D A = new Point2D(1, 2);
+        Point2D B = new Point2D(3, 4);
+        Point2D C = new Point2D(7, 8);
+
+        Polyline ABC = new Polyline(A, B, C);
+        System.out.println("ABC " + ABC.toString());
+        ClosedPolyline closedABC = new ClosedPolyline(A, B, C);
+        System.out.println("ABC замкнутая " + closedABC.toString());
+        Polyline ABCA = new Polyline(A, B, C, A);
+        System.out.println("ABCA " + ABCA.toString());
+
+        System.out.println("ABC и АВС замкнутая " + ABC.equals(closedABC));
+        System.out.println("ABC и АВСA " + ABC.equals(ABCA));
+        System.out.println("ABCA и АВС замкнутая " + ABCA.equals(closedABC));
     }
 }

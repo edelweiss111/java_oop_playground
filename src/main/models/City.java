@@ -1,6 +1,8 @@
 package models;
 
+import java.security.PublicKey;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class City {
     private String name;
@@ -74,5 +76,40 @@ public class City {
     @Override
     public String toString(){
         return "%s, соседи: %s".formatted(name, Arrays.toString(pathes));
+    }
+
+    @Override
+    public int hashCode(){
+        if (pathes == null || pathes.length == 0) return 0;
+        //проходимся циклом по массиву путей и сохраняем hash каждого пути в result
+        int result = 0;
+        for(Path path : pathes){
+            result += Objects.hashCode(path);
+        }
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj) return true;
+        //instanceof позволяет сравнивать потомков (ReturnCity)
+        if(!(obj instanceof City otherCity)) return false;
+        //Если длины массивов не совпадают - false
+        if (pathes.length != otherCity.pathes.length) return false;
+        //идем циклом по исходному списку путей
+        for(Path p1 : pathes){
+            //Флаг - нашлось ли совпадение;
+            boolean match = false;
+            //проходимся циклом по сравниваемому списку путей, если находим совпадение меняем флаг на true и переходим к следующей итеррации
+            for (Path p2 : otherCity.pathes){
+                if (Objects.equals(p1, p2)){
+                    match = true;
+                    break;
+                }
+            }
+            //Если не нашлось совпадения - false
+            if (!match) return false;
+        }
+        return true;
     }
 }

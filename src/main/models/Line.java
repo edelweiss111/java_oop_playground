@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Line implements Lengthable{
 
     private Point2D start;
@@ -50,5 +52,21 @@ public class Line implements Lengthable{
     @Override
     public String toString(){
         return "Линия от %s до %s".formatted(start, end);
+    }
+
+    @Override
+    public int hashCode(){
+        //Делаем через сложение, чтобы у обратной линии hash был такой же (AB = BA)
+        return Objects.hashCode(start) + Objects.hashCode(end);
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != getClass()) return false;
+        Line line = (Line) obj;
+        if (line.start.equals(this.start) && line.end.equals(this.end)) return true;
+        if (line.start.equals(this.end) && line.end.equals(this.start)) return true;
+        return false;
     }
 }

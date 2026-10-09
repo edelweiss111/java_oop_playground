@@ -1,5 +1,8 @@
 package models;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.ArrayList;
 
 public class Polyline implements Lengthable {
     private Point2D[] points;
@@ -54,9 +57,29 @@ public class Polyline implements Lengthable {
             }   
             return result;
         }
+    //Метод, возвращающий список всех точек (нужен для hash)
+    protected List<Point2D> getFullPoints(){
+        if (points == null) return  new ArrayList<>();
+        return new ArrayList<>(Arrays.asList(points));
+    }
 
     @Override
     public String toString(){
         return "Линия %s".formatted(Arrays.toString(points));
+    }
+
+    //Вычисляем hash по массиву всех точек
+    @Override
+    public int hashCode(){
+        return Objects.hashCode(getFullPoints());
+    }
+
+    @Override 
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+        //Проверяем является ли объект экземпляром или наследником класса Polyline и сразу приводим его к этому типу в переменной polyline, также проверяется != null
+        if (!(obj instanceof Polyline polyline)) return false;
+        //Сразу сравниваем списки точек у объектов
+        return Objects.equals(getFullPoints(), polyline.getFullPoints());
     }
 }
